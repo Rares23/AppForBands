@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h1>
+					Band Blog
+				</h1>
+			</div>
+		</div>
+		<nav>
+			
+				<%= render partial: "shared/menu"%>
+			
+		</nav>
+		<div class="row">
+			<div class="span9">
+				<%= yield %>
+			</div>
+			<div class="span3">
+				<%= render partial: "shared/sidebar"%>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

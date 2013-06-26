@@ -1,25 +1,34 @@
-<h1>Listing bands</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Desription</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    
+      
 
-<% @bands.each do |band| %>
-  <tr>
-    <td><%= band.name %></td>
-    <td><%= band.desription %></td>
-    <td><%= link_to 'Show', band %></td>
-    <td><%= link_to 'Edit', edit_band_path(band) %></td>
-    <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <% @bands.each do |band| %>
+      <div class="post">
+        <h2>
+        <%= band.name %>
+        </h2>
+        <div class="meta">
+          Posted on:
+          <%= band.created_at.strftime("%F,%T") %>
+        </div>
+        <div class="content">
+          <%= band.desription %>
+          <p>
+            <%= link_to "Citeste mai mult", band%>
+          </p>
+        </div>
 
-<br />
+        <div class="actions">
 
-<%= link_to 'New Band', new_band_path %>
+          <%= link_to 'Edit', edit_band_path(band) %>
+          <%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    <% end %>
+
+    <br />
+
+    <%= link_to 'New Band', new_band_path %>
+
+  
+

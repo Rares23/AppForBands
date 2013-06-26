@@ -1,6 +1,15 @@
 AppForBands::Application.routes.draw do
+  get "pages/index"
+
+  get "pages/contact", as: "contact"
+
+  get "pages/about", as: "about"
+
+  match "terms-and-conditions" => "pages#terms", as:"terms"
+
   get "welcome/index"
   get "welcome/home"
+  
   resources :bands
 
 
@@ -53,7 +62,7 @@ AppForBands::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#index'
+  root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"
 
