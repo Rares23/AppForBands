@@ -1,6 +1,6 @@
 AppForBands::Application.routes.draw do
   get "welcome/index"
-
+  get "welcome/home"
   resources :bands
 
 
